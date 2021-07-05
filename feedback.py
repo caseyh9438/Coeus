@@ -55,22 +55,21 @@ class MoleculeValidationAndFeedback(SmilesDataModule):
     GAIKFNDGLSLQESCRLIEALSSCQLPFQCAHGRPSMLPLADIDHLEQEKQIKPNLTKLR
     KMAQAWRLFGKAECDTRQSLQQSMPPCEPP
     """
-
+    
   def get_starting_character(self, char_list):
-
+   
     """This function determines probabilities for each starting 
         letter and picks one based on the likley-hood a molecule would 
         start with that letter. This is then feed into the model 
         as a starting character for molecule generation."""
-
+    
     self.probability_dict = pd.read_csv('https://storage.googleapis.com/htr1/LettersProbabilities1M.csv').drop(columns=['Unnamed: 0'])
     # self.probability_dict = {character: char_list.count(character) / (len(char_list) + 1) for character in char_list} if self.probability_dict is None else self.probability_dict
-    letters = list(self.probability_dict.keys())
-    probabilities = np.array(list(self.probability_dict.values()))
+    letters = self.probability_dict['letters'].tolist()
+    probabilities = np.array(self.probability_dict['probabilities'].tolist())
     probabilities /= probabilities.sum()
-    
     # SAVE LETTERS AND PROBABILITIES TO CSV TO SAVE TIME ON LATER RUNS
-    pd.DataFrame(data=list(zip(letters, probabilities)), columns=['letters', 'probabilities']).to_csv('LettersProbabilities1M.csv')
+    # pd.DataFrame(data=list(zip(letters, probabilities)), columns=['letters', 'probabilities']).to_csv('LettersProbabilities1M.csv')
     return np.random.choice(letters, p = probabilities.tolist())
 
   def run_utility_check(self, molecule):
