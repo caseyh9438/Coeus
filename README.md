@@ -1,5 +1,5 @@
 
-Coeus - Feedback Transformer Optimizing Small Molecule Generation
+# Coeus - Feedback Transformer Optimizing Small Molecule Generation
 
 Coeus is a pipeline for training a model to generate small molecules that exhibit your desired binding, permeability and druglike behaviors. The model is optimized to maximize binding to the target pocket's
 amino acid sequence while simultaneusly mimizing the binding to non-desired proteins and pocket sequences. Ceous generates new molecules every epoch, analyes them against the utility function and updates the training
@@ -18,18 +18,22 @@ I would recommend using the conda env locally and Docker only when training on c
 
 
 Local Conda Env Setup:
-git clone repo
+```sh
+git clone https://github.com/caseyh9438/Coeus
 cd Coeus
 conda env create -f environment.yml
 conda activate coeus
 python main.py
+```
 
 
 Cloud Linux Server Env Setup:
-git clone repo
+```sh
+git clone https://github.com/caseyh9438/Coeus
 cd Coeus
 bash docker_install.sh
 docker-compose up --build
+```
 
 
 For Google Colab Env Setup:
