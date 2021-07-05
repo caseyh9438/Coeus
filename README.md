@@ -17,7 +17,7 @@ The SMILES data used to train the model is pulled from a GCS url.
 I would recommend using the conda env locally and Docker only when training on cloud servers.
 
 
-Local Conda Env Setup:
+**Local Conda Env Setup:**
 ```sh
 git clone https://github.com/caseyh9438/Coeus
 cd Coeus
@@ -27,7 +27,7 @@ python main.py
 ```
 
 
-Cloud Linux Server Env Setup:
+**Cloud Linux Server Env Setup:**
 ```sh
 git clone https://github.com/caseyh9438/Coeus
 cd Coeus
@@ -36,6 +36,8 @@ docker-compose up --build
 ```
 
 
-For Google Colab Env Setup:
+**For Google Colab Env Setup:**
+```sh
 copy and paste setup code from colab_setup.py and run in the first cell
-copy and paste other classes, settings and main py files 
+copy and paste other classes, settings and main py files
+```
