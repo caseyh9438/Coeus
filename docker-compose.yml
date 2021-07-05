@@ -1,0 +1,11 @@
+version: '3.7'
+services:
+  deep_purpose:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: python main.py
+    volumes:
+      - ./:/usr/src/code/
+    env_file:
+      - .env
