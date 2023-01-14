@@ -1,11 +1,8 @@
 
 # Coeus - Feedback Transformer Optimizing Small Molecule Generation
 
-Coeus is a pipeline for training a model to generate small molecules that exhibit your desired binding, permeability and druglike behaviors. The model is optimized to maximize binding to the target pocket's
-amino acid sequence while simultaneusly mimizing the binding to non-desired proteins and pocket sequences. Ceous generates new molecules every epoch, analyes them against the utility function and updates the training
+This code repo contains is a pipeline for training a model to generate small molecules that exhibit your desired binding, permeability and druglike behaviors. It generates new molecules every epoch, analyes them against the utility function and updates the training
 data with the best preformers.
-
-The code currently targets the MLH3 endonuclease domain pocket sequence to generate small molecules to prevent somatic expansion in Huntington's disease and other dynamic mutation tri-nuculeotide disorders.
 
 Coeus is built using Pytorch and Pytorch Lightning.
 
